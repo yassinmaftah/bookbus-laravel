@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->id();
+            $table->string('matricule')->unique();
+            $table->integer('capacite');
+            $table->string('statut')->default('active');
             $table->timestamps();
         });
     }
