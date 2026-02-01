@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('programme_segments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('programme_id')->constrained('programmes')->onDelete('cascade');
+            $table->foreignId('segment_id')->constrained('segments')->onDelete('cascade');
+            $table->integer('available_seats');
             $table->timestamps();
         });
     }
