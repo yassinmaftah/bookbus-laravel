@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('bus_id')->constrained('buses')->onDelete('cascade');
+            $table->integer('seat_number');
             $table->timestamps();
         });
     }
