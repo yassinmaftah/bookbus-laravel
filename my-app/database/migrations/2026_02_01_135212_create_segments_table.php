@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('segments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('etape_depart_id')->constrained('etapes')->onDelete('cascade');
+            $table->foreignId('etape_arrivee_id')->constrained('etapes')->onDelete('cascade');
+            $table->decimal('tarif', 8, 2);
+            $table->integer('duree_estimee');
+            $table->float('distance_km')->nullable();
             $table->timestamps();
         });
     }
