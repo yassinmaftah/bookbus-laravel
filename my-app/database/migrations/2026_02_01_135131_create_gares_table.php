@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('gares', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('ville_id')->constrained('villes')->onDelete('cascade');
+            $table->string('nom');
+            $table->string('adresse')->nullable();
             $table->timestamps();
         });
     }
