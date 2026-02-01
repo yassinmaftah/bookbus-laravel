@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->dateTime('date_reservation')->useCurrent();
+            $table->string('status')->default('pending'); // confirmed, cancelled, pending
             $table->timestamps();
         });
     }
