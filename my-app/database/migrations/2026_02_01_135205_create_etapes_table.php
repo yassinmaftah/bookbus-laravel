@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('etapes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('route_id')->constrained('routes')->onDelete('cascade');
+            $table->foreignId('gare_id')->constrained('gares')->onDelete('cascade');
+            $table->integer('ordre');
+            $table->time('heure_passage')->nullable();
             $table->timestamps();
         });
     }
