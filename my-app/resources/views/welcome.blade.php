@@ -117,7 +117,7 @@
 
                             <div class="text-center md:text-right">
                                 <div class="text-3xl font-bold text-orange-600 mb-2">{{ $segment->tarif }} DH</div>
-                                <a href="#" class="inline-block bg-orange-500 text-white px-6 py-2 rounded font-semibold hover:bg-orange-600 transition">
+                                <a href="{{ route('reservation.form', ['id' => $voyage->id, 'passengers' => request('passengers', 1)]) }}" class="inline-block bg-orange-500 text-white px-6 py-2 rounded font-semibold hover:bg-orange-600 transition">
                                     Réserver
                                 </a>
                             </div>
