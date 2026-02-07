@@ -2,37 +2,29 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Gare;
+use App\Models\Ville;
 
 class GareSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
+        $casaId = Ville::where('name', 'Casablanca')->first()->id;
+        $rabatId = Ville::where('name', 'Marrakech')->first()->id; // Ou Rabat si tu l'ajoutes
+        $tangerId = Ville::where('name', 'Tangier ')->first()->id; // Attention à l'espace dans ton array 'Tangier '
+
         Gare::create([
-            'ville_id' => 1,
+            'ville_id' => $casaId,
             'nom' => 'Gare Voyageurs',
-            'adresse' => 'Center City, Casa'
-        ]);
-        Gare::create([
-            'ville_id' => 1,
-            'nom' => 'Gare Oasis',
-            'adresse' => 'Oasis District, Casa'
+            'adresse' => 'Centre Ville'
         ]);
 
         Gare::create([
-            'ville_id' => 2,
-            'nom' => 'Gare Agdal',
-            'adresse' => 'Agdal, Rabat'
+            'ville_id' => $tangerId,
+            'nom' => 'Gare Tanger Ville',
+            'adresse' => 'Corniche'
         ]);
-        Gare::create([
-            'ville_id' => 2,
-            'nom' => 'Gare Ville',
-            'adresse' => 'Downtown, Rabat'
-        ]);
+
     }
 }
