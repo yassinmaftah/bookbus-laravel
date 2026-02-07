@@ -10,8 +10,12 @@ class Programme extends Model
     {
         return $this->belongsTo(Route::class);
     }
-    public function segments()
+    // public function segments()
+    // {
+    //     return $this->hasMany(Segment::class);
+    // }
+    public function bus()
     {
-        return $this->hasMany(Segment::class);
+        return $this->belongsTo(Bus::class);
     }
 }
