@@ -1,59 +1,339 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚌 SATAS Bus - Online Bus Reservation System
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/Laravel-11.x-red?style=for-the-badge&logo=laravel" alt="Laravel">
+  <img src="https://img.shields.io/badge/PHP-8.2+-blue?style=for-the-badge&logo=php" alt="PHP">
+  <img src="https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind">
+  <img src="https://img.shields.io/badge/MySQL-8.0-orange?style=for-the-badge&logo=mysql" alt="MySQL">
 </p>
 
-## About Laravel
+## 📋 Table of Contents
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Database Setup](#database-setup)
+- [Default Accounts](#default-accounts)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Screenshots](#screenshots)
+- [License](#license)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🎯 About
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+SATAS Bus is a modern, full-featured online bus reservation system built with Laravel 11. It provides a seamless booking experience for passengers and a comprehensive management dashboard for administrators.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Features
 
-## Learning Laravel
+### 🎫 User Features
+- **Smart Search System** - Search buses by departure/arrival cities and date
+- **Real-time Availability** - View available seats and schedules
+- **Secure Booking** - Complete reservation with payment processing
+- **User Dashboard** - Manage reservations and download tickets
+- **Profile Management** - Update personal information and password
+- **Ticket Download** - Generate PDF tickets for confirmed bookings
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 👨‍💼 Admin Features
+- **Admin Dashboard** - Overview of reservations, revenue, and statistics
+- **Reservation Management** - View and manage all bookings
+- **Fleet Management** - Manage buses and their capacities
+- **Route Management** - Configure routes, segments, and pricing
+- **User Management** - Monitor passenger accounts
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🎨 Design Features
+- **Professional UI** - Modern, clean interface with Tailwind CSS
+- **Responsive Design** - Works seamlessly on desktop and mobile
+- **Smooth Animations** - CSS keyframe animations for better UX
+- **Unified Navigation** - Consistent navbar across all pages
+- **Role-based Access** - Separate interfaces for users and admins
 
-## Laravel Sponsors
+## 🛠 Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Backend:** Laravel 11.x
+- **Frontend:** Blade Templates, Tailwind CSS
+- **Database:** MySQL 8.0
+- **PDF Generation:** DomPDF
+- **Authentication:** Laravel Breeze
+- **Icons:** Heroicons (SVG)
 
-### Premium Partners
+## 📦 Installation
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Prerequisites
+- PHP >= 8.2
+- Composer
+- MySQL >= 8.0
+- Node.js & NPM
 
-## Contributing
+### Steps
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/satas-bus.git
+cd satas-bus/my-app
+```
 
-## Code of Conduct
+2. **Install PHP dependencies**
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. **Install Node dependencies**
+```bash
+npm install
+```
 
-## Security Vulnerabilities
+4. **Create environment file**
+```bash
+copy .env.example .env
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Generate application key**
+```bash
+php artisan key:generate
+```
 
-## License
+6. **Configure database in .env**
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=bookbus
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7. **Run migrations and seeders**
+```bash
+php artisan migrate:fresh --seed
+php artisan db:seed --class=AdminSeeder
+```
+
+8. **Build assets**
+```bash
+npm run build
+```
+
+9. **Start development server**
+```bash
+php artisan serve
+```
+
+Visit: `http://localhost:8000`
+
+## ⚙️ Configuration
+
+### Admin Middleware
+The admin middleware is registered in `bootstrap/app.php`:
+```php
+->withMiddleware(function (Middleware $middleware) {
+    $middleware->alias([
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
+    ]);
+})
+```
+
+### Storage Link
+Create symbolic link for storage:
+```bash
+php artisan storage:link
+```
+
+## 🗄️ Database Setup
+
+The project includes comprehensive seeders:
+
+- **VilleSeeder** - 20 Moroccan cities
+- **BusSeeder** - 100 buses with varying capacities
+- **RouteSeeder** - Multiple routes between cities
+- **ProgrammeSeeder** - Daily schedules for next 30 days
+- **TestDataSeeder** - Sample reservations
+- **AdminSeeder** - Admin account
+
+## 🔐 Default Accounts
+
+### Admin Account
+- **Email:** admin@satasbus.ma
+- **Password:** admin123
+- **Access:** Full admin panel access
+
+### Test User Account
+- **Email:** test@test.com
+- **Password:** password
+- **Access:** User dashboard with sample reservations
+
+## 🚀 Usage
+
+### For Passengers
+1. Visit homepage and search for buses
+2. Select departure/arrival cities and date
+3. Choose from available buses
+4. Complete booking with payment
+5. Download ticket from dashboard
+
+### For Administrators
+1. Login with admin credentials
+2. Access admin panel via "Admin" link in navbar
+3. View statistics on dashboard
+4. Manage reservations, buses, and routes
+5. Monitor system performance
+
+## 📁 Project Structure
+
+```
+my-app/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── AdminController.php
+│   │   │   ├── ReservationController.php
+│   │   │   ├── SearchController.php
+│   │   │   ├── ProfileController.php
+│   │   │   └── PageController.php
+│   │   └── Middleware/
+│   │       └── AdminMiddleware.php
+│   └── Models/
+│       ├── User.php
+│       ├── Bus.php
+│       ├── Route.php
+│       ├── Programme.php
+│       └── Reservation.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+│       ├── VilleSeeder.php
+│       ├── BusSeeder.php
+│       ├── RouteSeeder.php
+│       ├── ProgrammeSeeder.php
+│       └── AdminSeeder.php
+├── resources/
+│   └── views/
+│       ├── partials/
+│       │   ├── navbar.blade.php
+│       │   └── admin-navbar.blade.php
+│       ├── admin/
+│       │   ├── dashboard.blade.php
+│       │   ├── reservations.blade.php
+│       │   ├── buses.blade.php
+│       │   └── routes.blade.php
+│       ├── pages/
+│       │   ├── about.blade.php
+│       │   ├── contact.blade.php
+│       │   ├── faq.blade.php
+│       │   ├── terms.blade.php
+│       │   └── privacy.blade.php
+│       ├── profile/
+│       │   ├── show.blade.php
+│       │   └── edit.blade.php
+│       ├── auth/
+│       ├── dashboard.blade.php
+│       └── welcome.blade.php
+└── routes/
+    └── web.php
+```
+
+## 📸 Screenshots
+
+### Homepage
+Modern search interface with city selection and date picker
+
+### User Dashboard
+View and manage all reservations with download options
+
+### Admin Panel
+Comprehensive dashboard with statistics and management tools
+
+### Booking Flow
+Seamless reservation process from search to confirmation
+
+## 🔑 Key Routes
+
+### Public Routes
+- `/` - Homepage with search
+- `/about` - About page
+- `/contact` - Contact form
+- `/faq` - Frequently asked questions
+- `/terms` - Terms and conditions
+- `/privacy` - Privacy policy
+
+### Authenticated Routes
+- `/dashboard` - User reservations
+- `/profile` - User profile
+- `/profile/edit` - Edit profile
+- `/reservation/{id}` - Booking form
+- `/ticket/{id}/download` - Download ticket PDF
+
+### Admin Routes (requires admin role)
+- `/admin/dashboard` - Admin overview
+- `/admin/reservations` - All reservations
+- `/admin/buses` - Fleet management
+- `/admin/routes` - Route management
+
+## 🎨 Design System
+
+### Colors
+- **Primary:** Orange (#F97316)
+- **Secondary:** Purple (#9333EA)
+- **Success:** Green (#10B981)
+- **Danger:** Red (#EF4444)
+- **Neutral:** Gray shades
+
+### Typography
+- **Font Family:** System fonts (sans-serif)
+- **Headings:** Bold, 2xl-4xl sizes
+- **Body:** Medium weight, base size
+
+## 🔒 Security Features
+
+- CSRF protection on all forms
+- Password hashing with bcrypt
+- Role-based access control
+- SQL injection prevention via Eloquent ORM
+- XSS protection via Blade templating
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Issue:** White page after login
+**Solution:** Clear view cache
+```bash
+php artisan view:clear
+php artisan route:clear
+php artisan config:clear
+```
+
+**Issue:** Admin link not showing
+**Solution:** Ensure user role is set to 'admin'
+```bash
+php artisan tinker
+$user = User::where('email', 'your@email.com')->first();
+$user->role = 'admin';
+$user->save();
+```
+
+**Issue:** Assets not loading
+**Solution:** Rebuild assets
+```bash
+npm run build
+```
+
+## 📝 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 👨‍💻 Author
+
+**SATAS Bus Development Team**
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## 📞 Support
+
+For support, email contact@satasbus.ma or create an issue in the repository.
+
+---
+
+<p align="center">Made with ❤️ using Laravel</p>
