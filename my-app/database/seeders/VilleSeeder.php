@@ -18,7 +18,8 @@ class VilleSeeder extends Seeder
         $villes = [
             'Casablanca', 'Rabat', 'Marrakech', 'Tanger', 'Agadir',
             'Fès', 'Meknès', 'Oujda', 'Tétouan', 'Essaouira',
-            'El Jadida', 'Safi'
+            'El Jadida', 'Safi', 'Kenitra', 'Béni Mellal', 'Nador',
+            'Khouribga', 'Settat', 'Larache', 'Khénifra', 'Guelmim'
         ];
 
         foreach ($villes as $nomVille) {

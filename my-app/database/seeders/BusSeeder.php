@@ -13,9 +13,9 @@ class BusSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 50; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             Bus::create([
-                'matricule' => rand(1000, 99999) . '-A-' . rand(1, 80),
+                'matricule' => rand(10000, 99999) . '-A-' . rand(1, 99),
                 'capacite' => 50,
             ]);
         }
