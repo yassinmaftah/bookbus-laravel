@@ -8,19 +8,7 @@
 </head>
 <body class="bg-gray-100 font-sans antialiased text-gray-800">
 
-    <nav class="bg-white shadow py-4">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-orange-600">SATAS<span class="text-gray-700">Bus</span></div>
-            <div>
-                @auth
-                    <a href="{{ url('/dashboard') }}" class="text-gray-700 underline">Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}" class="text-gray-700 hover:text-orange-600 px-3">Connexion</a>
-                    <a href="{{ route('register') }}" class="text-gray-700 hover:text-orange-600 px-3">Inscription</a>
-                @endauth
-            </div>
-        </div>
-    </nav>
+    @include('partials.navbar')
 
     <div class="bg-orange-50 py-16">
         <div class="max-w-7xl mx-auto px-4">
@@ -140,6 +128,170 @@
         @endif
 
     </div>
+
+    <div class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Ce que disent nos clients</h2>
+                <p class="text-gray-600 text-lg">Des milliers de voyageurs satisfaits partagent leur expérience</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-orange-500 text-xl">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 font-semibold">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">« Service impeccable ! J'ai voyagé de Casablanca à Marrakech et tout était parfait. Le bus était propre, confortable et le chauffeur très professionnel. La réservation en ligne est simple et rapide. Je recommande vivement ! »</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-lg font-bold">AM</div>
+                        <div class="ml-4">
+                            <div class="font-bold text-gray-900">Ahmed Mansouri</div>
+                            <div class="text-sm text-gray-500">Casablanca - Voyageur fréquent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-orange-500 text-xl">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 font-semibold">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">« Excellente expérience avec SATAS Bus. Les horaires sont respectés, le personnel est accueillant et les prix sont très compétitifs. J'utilise leurs services depuis 3 ans et je n'ai jamais été déçue. Bravo pour le professionnalisme ! »</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-lg font-bold">SE</div>
+                        <div class="ml-4">
+                            <div class="font-bold text-gray-900">Salma El Amrani</div>
+                            <div class="text-sm text-gray-500">Rabat - Cliente fidèle</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-orange-500 text-xl">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600 font-semibold">5.0</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">« Très satisfait du service. Les bus sont modernes avec WiFi et climatisation. Le système de réservation en ligne est intuitif. J'ai voyagé plusieurs fois pour le travail et c'est toujours un plaisir. Ponctualité au rendez-vous ! »</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-lg font-bold">YB</div>
+                        <div class="ml-4">
+                            <div class="font-bold text-gray-900">Youssef Bennani</div>
+                            <div class="text-sm text-gray-500">Marrakech - Voyageur d'affaires</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <div class="inline-flex items-center gap-8 bg-orange-50 rounded-2xl px-12 py-6">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-orange-600">4.9/5</div>
+                        <div class="text-sm text-gray-600 mt-1">Note moyenne</div>
+                    </div>
+                    <div class="w-px h-12 bg-orange-200"></div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-orange-600">12,500+</div>
+                        <div class="text-sm text-gray-600 mt-1">Avis clients</div>
+                    </div>
+                    <div class="w-px h-12 bg-orange-200"></div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-orange-600">98%</div>
+                        <div class="text-sm text-gray-600 mt-1">Recommandations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-orange-50 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Pourquoi choisir SATAS Bus ?</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">💳</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Paiement Sécurisé</h3>
+                    <p class="text-gray-600 text-sm">Transactions 100% sécurisées</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">⏰</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Ponctualité</h3>
+                    <p class="text-gray-600 text-sm">Départs et arrivées à l'heure</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">💺</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Confort</h3>
+                    <p class="text-gray-600 text-sm">Sièges confortables et WiFi</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">👥</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Support 24/7</h3>
+                    <p class="text-gray-600 text-sm">Service client disponible</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SATAS<span class="text-orange-500">Bus</span></h3>
+                    <p class="text-gray-400 text-sm">Votre partenaire de confiance pour vos voyages au Maroc depuis 1985.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{{ route('home') }}" class="text-gray-400 hover:text-white">Accueil</a></li>
+                        <li><a href="{{ route('about') }}" class="text-gray-400 hover:text-white">À Propos</a></li>
+                        <li><a href="{{ route('contact') }}" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Réservation en ligne</li>
+                        <li>Transport de colis</li>
+                        <li>Voyages groupés</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>📍 Casablanca, Maroc</li>
+                        <li>📞 +212 5 22 XX XX XX</li>
+                        <li>✉️ contact@satasbus.ma</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 SATAS Bus. Tous droits réservés.</p>
+                <div class="mt-4 space-x-4">
+                    <a href="{{ route('terms') }}" class="hover:text-white">Conditions d'utilisation</a>
+                    <a href="{{ route('privacy') }}" class="hover:text-white">Politique de confidentialité</a>
+                    <a href="{{ route('faq') }}" class="hover:text-white">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

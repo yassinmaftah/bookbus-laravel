@@ -10,6 +10,16 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class ReservationController extends Controller
 {
+    public function dashboard()
+    {
+        $reservations = Reservation::with(['programme.route', 'programme.bus'])
+            ->where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->get();
+        
+        return view('dashboard', compact('reservations'));
+    }
+
     public function showPaymentForm($id, Request $request)
     {
         $programme = Programme::with(['route.segments', 'bus'])->findOrFail($id);
@@ -50,14 +60,37 @@ class ReservationController extends Controller
 
     public function success($id)
     {
-        $reservation = Reservation::findOrFail($id);
+        $reservation = Reservation::with(['programme.route', 'programme.bus'])
+            ->where('id', $id)
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
+        
         return view('reservation.success', compact('reservation'));
     }
 
     public function downloadTicket($id)
     {
-        $reservation = Reservation::with(['programme.route', 'user'])->findOrFail($id);
+        $reservation = Reservation::with(['programme.route', 'user'])
+            ->where('id', $id)
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
+        
         $pdf = Pdf::loadView('reservation.ticket_pdf', compact('reservation'));
         return $pdf->download('ticket-satas-' . $reservation->id . '.pdf');
+    }
+
+    public function cancel($id)
+    {
+        $reservation = Reservation::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
+
+        if ($reservation->status === 'annulé') {
+            return back()->with('error', 'Cette réservation est déjà annulée.');
+        }
+
+        $reservation->update(['status' => 'annulé']);
+
+        return back()->with('success', 'Réservation annulée avec succès. Un remboursement sera effectué sous 5-7 jours.');
     }
 }
