@@ -1,0 +1,11 @@
+.git
+.github
+docs/screenshots
+my-app/node_modules
+my-app/vendor
+my-app/.env
+my-app/.phpunit.result.cache
+my-app/storage/logs/*.log
+my-app/storage/framework/cache/data/*
+my-app/storage/framework/sessions/*
+my-app/storage/framework/views/*

@@ -1,0 +1,48 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: satas_bus_app
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8005}:8000"
+    environment:
+      APP_NAME: "SATAS Bus"
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: "http://localhost:${PORT:-8005}"
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: bookbus
+      DB_USERNAME: bookbus
+      DB_PASSWORD: secret
+      SESSION_DRIVER: file
+      QUEUE_CONNECTION: sync
+      CACHE_STORE: file
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mariadb:lts
+    container_name: satas_bus_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootsecret
+      MYSQL_DATABASE: bookbus
+      MYSQL_USER: bookbus
+      MYSQL_PASSWORD: secret
+    volumes:
+      - satas_bus_db_data:/var/lib/mysql
+    ports:
+      - "${DB_PORT_HOST:-3307}:3306"
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h localhost -uroot -prootsecret || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  satas_bus_db_data:
