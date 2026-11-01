@@ -434,5 +434,5 @@ Detailed payloads, query parameters, validation rules, and sample requests are d
 
 **Yassine Maftah**
 - **GitHub:** [@yassinmaftah](https://github.com/yassinmaftah)
-- **LinkedIn:** [Yassine Maftah](https://www.linkedin.com/in/yassine-maftah/)
-- **Email:** `contact@yassinmaftah.com` *(or reach out via GitHub)*
+- **LinkedIn:** [Yassine Maftah](https://www.linkedin.com/in/yassine-maftah-b5793933b/)
+- **Email:** `yassinmaftah06@gmail.com`
